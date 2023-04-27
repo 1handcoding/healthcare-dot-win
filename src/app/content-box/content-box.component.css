@@ -1,0 +1,13 @@
+#displayRow {
+    display: grid;
+  
+    grid-template-rows: 10% 1fr 10%;
+
+    grid-template-areas:
+        "banner"
+        "contentRow" 
+        "footer";
+
+    text-align: center;
+    border: 2em solid #660330;
+}
