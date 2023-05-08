@@ -1,0 +1,5 @@
+mat-stepper {
+    min-height: 100%;
+    width: fit-content;
+    border-right: 0.8em solid #660330;
+}

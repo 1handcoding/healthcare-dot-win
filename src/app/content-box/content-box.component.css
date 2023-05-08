@@ -1,13 +1,19 @@
-#displayRow {
+.displayBox {
+    margin-top: 2em;
     display: grid;
   
-    grid-template-rows: 10% 1fr 10%;
+    grid-template-columns: 1fr 3fr;
 
     grid-template-areas:
-        "banner"
-        "contentRow" 
-        "footer";
+        "stepBox"
+        "contentBox";
 
     text-align: center;
     border: 2em solid #660330;
+    border-radius: 1em;
+}
+.listBox{
+    border-left: 5px solid #660330;
+    background-color: whitesmoke;
+    height: 100%;
 }

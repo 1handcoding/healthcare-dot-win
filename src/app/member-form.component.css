@@ -1,0 +1,17 @@
+.memberBox {
+    margin-top: 2em;
+    width: 100%;
+    height: max-content;
+    display: grid;
+  
+    grid-template-columns: 1fr 3fr;
+
+    grid-template-areas:
+        "formBox"
+        "listBox";
+
+    text-align: center
+}
+.listBox {
+    border-left: 2em solid #660330;
+}
