@@ -2,4 +2,8 @@ mat-stepper {
     min-height: 100%;
     width: fit-content;
     border-right: 0.8em solid #660330;
+    font-weight: 600;
+}
+ng-template {
+    height: max-content;
 }

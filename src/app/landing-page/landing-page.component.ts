@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Member } from '../member';
+import { MEMBERS } from '../members-array';
 
 @Component({
   selector: 'app-landing-page',

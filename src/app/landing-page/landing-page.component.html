@@ -1,1 +1,9 @@
 <p>landing-page works!</p>
+            <ul *ngFor="let member in members">
+                <li>
+                    <button type="button">
+                    <span class="badge">{{member.id}}</span>
+                    <span class="name">{{member.name}}</span>
+                    </button>
+                </li>
+            </ul>
