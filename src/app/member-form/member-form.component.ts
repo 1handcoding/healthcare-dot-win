@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Member } from '../member'
 import { MemberServiceService } from '../services/member-service.service';
 
@@ -9,9 +8,9 @@ import { MemberServiceService } from '../services/member-service.service';
   styleUrls: ['./member-form.component.css']
 })
 
-export class MemberFormComponent implements OnInit {
+export class MemberFormComponent {
   
-  selectedMember?: Member;
+  /*selectedMember?: Member;
   
   members: Member[] = [];
 
@@ -26,5 +25,5 @@ export class MemberFormComponent implements OnInit {
   getMembers(): void {
     this.memberService.getMembers()
         .subscribe(members => this.members = members);
-  }
+  }*/
 }

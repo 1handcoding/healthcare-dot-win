@@ -13,6 +13,8 @@ import { StepBoxComponent } from './step-box/step-box.component';
 import { LandingPageComponent} from './landing-page/landing-page.component';
 import { MemberFormComponent } from './member-form/member-form.component';
 
+import { HeroesComponent } from './heroes/heroes.component';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -29,7 +31,7 @@ import { MemberFormComponent } from './member-form/member-form.component';
     FooterBoxComponent,
     StepBoxComponent,
     LandingPageComponent,
-    MemberFormComponent
+    MemberFormComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
