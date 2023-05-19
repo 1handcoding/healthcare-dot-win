@@ -1,13 +1,10 @@
-<div >
-<h2>member form</h2>
-<!--<h2 *ngIf="selectedMember">Edit</h2>
-<h2 aria-level="2" *ngIf="!selectedMember">Add a plan member</h2>
+<div *ngIf="member">
 
-
+  <h2>{{member.lastName | uppercase}} Details</h2>
+  <div><span>id: </span>{{member.id}}</div>
   <div>
-    <label for="member-firstName">First Name: </label>
-    <input id="member-firstName" [(ngModel)]="member.firstName" placeholder="enter a first name">
-    <label for="member-lastName">Last Name: </label>
-    <input id="member-lastName" [(ngModel)]="member.lastName" placeholder="enter a last name">
-  </div>-->
+    <label for="member-lastName">Plan Member's Last Name: </label>
+    <input id="member-lastName" [(ngModel)]="member.lastName" placeholder="lastName">
+  </div>
+
 </div>
