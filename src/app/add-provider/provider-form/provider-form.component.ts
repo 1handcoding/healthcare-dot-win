@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
+import { Provider } from 'src/app/provider';
 
 @Component({
   selector: 'app-provider-form',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./provider-form.component.css']
 })
 export class ProviderFormComponent {
-
+  @Input() provider?: Provider;
 }

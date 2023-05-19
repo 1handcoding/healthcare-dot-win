@@ -8,9 +8,10 @@ import { MEMBERS } from '../members-array';
 @Injectable({
   providedIn: 'root'
 })
-export class MemberServiceService {
 
-  constructor(private memberService: MemberServiceService) { }
+export class MemberService {
+
+  constructor() { }
 
     getMembers(): Observable<Member[]> {
       const members = of(MEMBERS);

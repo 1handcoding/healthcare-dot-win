@@ -1,7 +1,6 @@
 .routerContainer {
-    display: grid;
-    grid-template-rows: auto;
-    color: #660330;
+    min-height: 100%;
+    display: block;
 }
 
 .routerBoxHead {
@@ -10,11 +9,15 @@
 }
 
 .routerBox{
+    background-color: blueviolet;
     margin: 0 0 0 0;
     width: 100%;
     min-height: 100%;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    display: grid;    
+    grid-template-columns: 3fr 2fr;
+        grid-template-areas:
+        "formBox"
+        "listBox";
     text-align: center
 }
 
@@ -23,10 +26,7 @@
 }
 
 .listBox {
-    min-height: max-content;
+    min-height: 100%;
     border-left: 2em solid #660330;
 }
 
-ul, li {
-color:black;
-}

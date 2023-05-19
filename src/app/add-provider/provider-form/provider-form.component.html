@@ -1,0 +1,11 @@
+<p>provider-form works!</p>
+<div *ngIf="provider">
+
+  <h2>{{provider.lastName | uppercase}} Details</h2>
+  <div><span>id: </span>{{provider.id}}</div>
+  <div>
+    <label for="provider-lastName">Provider Last Name: </label>
+    <input id="provider-lastName" [(ngModel)]="provider.lastName" placeholder="lastName">
+  </div>
+
+</div>

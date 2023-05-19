@@ -1,24 +1,32 @@
 <div class="stepBox">
 <mat-stepper orientation="vertical">
     <mat-step>
-        <a  [routerLink]="['/basicInfo']">
-            <ng-template matStepLabel>Edit Basic Info</ng-template>
-        </a>
+        <ng-template matStepLabel>
+            <button [routerLink]="['/basicInfo']">
+                Edit Basic Info
+            </button>
+        </ng-template>
     </mat-step>
     <mat-step>
-        <a  [routerLink]="['/addMember']">
-            <ng-template matStepLabel>Add/Edit Family Members</ng-template>
-        </a>
+        <ng-template matStepLabel>
+            <button [routerLink]="['/addMember']">
+                Add/Edit Family Members
+            </button>
+        </ng-template>
     </mat-step>
     <mat-step>
-        <a [routerLink]="['/addProvider']">
-            <ng-template matStepLabel>Add/Edit Provider</ng-template>
-        </a>
+        <ng-template matStepLabel>
+            <button [routerLink]="['/addProvider']">
+                Add/Edit Provider
+            </button>
+        </ng-template>
     </mat-step>
     <mat-step>
-        <a [routerLink]="['/addRx']">
-            <ng-template matStepLabel>Add/Edit RX</ng-template>
-        </a>
+        <ng-template matStepLabel>
+            <button [routerLink]="['/addRx']">
+                Add/Edit RX
+            </button>
+        </ng-template>
     </mat-step>
 </mat-stepper>
 </div>

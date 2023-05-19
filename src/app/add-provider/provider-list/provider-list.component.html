@@ -1,0 +1,13 @@
+<div class="listBox">
+<ul class="providers">
+  <li *ngFor="let provider of providers">
+    <button [class.selected]="provider === selectedProvider" type="button" (click)="onSelect(provider)">
+      <span class="badge">{{provider.id}}</span>
+      <span class="lastName">{{provider.lastName}}</span>
+    </button>
+  </li>
+</ul>
+</div>
+<div class="formBox">
+    <app-provider-form [provider]="selectedProvider"></app-provider-form>
+</div>

@@ -1,0 +1,32 @@
+.routerContainer {
+    min-height: 100%;
+    display: block;
+}
+
+.routerBoxHead {
+    background-color: #660330;
+    color: whitesmoke;
+}
+
+.routerBox{
+    background-color: blueviolet;
+    margin: 0 0 0 0;
+    width: 100%;
+    min-height: 100%;
+    display: grid;    
+    grid-template-columns: 3fr 2fr;
+        grid-template-areas:
+        "formBox"
+        "listBox";
+    text-align: center
+}
+
+.formBox {
+    min-height: 100%;
+}
+
+.listBox {
+    min-height: 100%;
+    border-left: 2em solid #660330;
+}
+

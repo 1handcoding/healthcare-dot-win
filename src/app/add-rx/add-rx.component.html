@@ -1,0 +1,15 @@
+<div class="routerBox">
+    <div class="formBox">
+        <app-rx-form [rx]="selectedRx" />
+    </div>
+    <div class="listBox">
+        <ul class="lister">
+            <li *ngFor="let rx of rxs">
+                <button [class.selected]="rx === selectedRx" type="button" (click)="onSelect(rx)">
+                    <span class="badge">{{rx.drugName}}</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+</div>

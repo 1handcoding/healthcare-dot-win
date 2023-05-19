@@ -1,0 +1,11 @@
+<p>rx-form works!</p>
+<div *ngIf="rx">
+
+  <h2>{{rx.drugName | uppercase}} Details</h2>
+  <div><span>id: </span>{{rx.id}}</div>
+  <div>
+    <label for="brandName">Brand Name Drug: </label>
+    <input id="rx-brandName" [(ngModel)]="rx.drugName" placeholder="drugName">
+  </div>
+
+</div>

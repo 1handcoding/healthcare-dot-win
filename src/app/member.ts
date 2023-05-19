@@ -1,7 +1,7 @@
 export interface Member {
     id: number;
     lastName: string;
-    name: string;
+    firstName: string;
     /*location: string;
     zipCode: number;*/
 }
