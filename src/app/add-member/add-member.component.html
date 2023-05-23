@@ -1,10 +1,14 @@
-<div class="routerContainer">
-    <div class="routerBox">
-        <div class="formBox">
-            <app-member-form/>
-        </div>
-        <div class="listBox">
-            <app-member-list />
-        </div>
+<div class="routerBox">
+    <div class="formBox">
+        <p>member form loaded</p>
+        <app-member-form></app-member-form>
+    </div>    
+    <div class="listBox">
+        <ul class="lister">
+        <li *ngFor="let member of members">
+            <p>{{member.firstName}}</p>
+        </li>
+        </ul>
     </div>
+
 </div>

@@ -1,8 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Member } from '../member';
-import { MEMBERS } from '../members-array';
+import { MemberService } from '../members.service';
 import { MemberFormComponent } from './member-form/member-form.component';
-import { MemberListComponent } from './member-list.component';
 
 @Component({
   selector: 'app-add-member',
@@ -10,9 +9,17 @@ import { MemberListComponent } from './member-list.component';
   styleUrls: ['./add-member.component.css']
 })
 
-export class AddMemberComponent {
+export class AddMemberComponent implements OnInit {
+  members: Member[] = [];
 
-  /*setSelectedMember(member: Member) {
-    this.selectedMember = member;
-  }*/
+  constructor(private memberService: MemberService) { }
+
+  ngOnInit(): void {
+    this.getMembers();
+  }
+
+  getMembers(): void {
+    this.memberService.getMembers()
+    .subscribe(members => this.members = members);
+  }
 }
