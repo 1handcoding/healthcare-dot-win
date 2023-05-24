@@ -1,5 +1,4 @@
 <div *ngIf="selectedMember">
-  <router-outlet />
   <h2>{{selectedMember.lastName | uppercase}} Details</h2>
   <div><span>id: </span>{{selectedMember.id}}</div>
   <div>
@@ -8,3 +7,4 @@
   </div>
   <button type="button" (click)="save()">save</button>
 </div>
+<p *ngIf="selectedMember">{{selectedMember.firstName}}</p>
