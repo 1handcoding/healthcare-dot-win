@@ -5,9 +5,14 @@
     </div>    
     <div class="listBox">
         <ul class="lister">
-        <li *ngFor="let member of members">
-            <p>{{member.firstName}}</p>
-        </li>
+            <li *ngFor="let member of members">
+                <p>{{member.firstName}}</p>
+                <a routerLink="/detail/{{member.id}}">
+                    <span class="badge">{{member.id}}</span> {{member.firstName}}
+                </a>
+                <!--<button type="button" class="delete" title="delete hero"
+    (click)="delete(hero)">x</button>-->
+            </li>
         </ul>
     </div>
 

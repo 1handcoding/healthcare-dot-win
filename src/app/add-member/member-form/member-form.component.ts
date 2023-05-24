@@ -1,5 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { Member } from 'src/app/member';
+import { MemberService } from 'src/app/members.service';
 
 
 @Component({
@@ -8,6 +11,29 @@ import { Member } from 'src/app/member';
   styleUrls: ['./member-form.component.css']
 })
 
-export class MemberFormComponent {
-  @Input() member?:Member
+export class MemberFormComponent implements OnInit {
+  member: Member | undefined;
+
+  constructor(
+    private route: ActivatedRoute,
+    private memberService: MemberService,
+    private location: Location) {}
+
+  ngOnInit(): void {
+    this.getMember();
+  }
+
+  getMember(): void {
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10)}
+
+  goBack(): void {
+    this.location.back();
+  }
+
+  save(): void {
+    if (this.member) {
+      this.memberService.updateMember(this.member)
+        .subscribe(() => this.goBack());
+    }
+  }
 }

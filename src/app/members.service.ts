@@ -13,6 +13,32 @@ export class MemberService {
 
   private membersUrl = 'api/members';  // URL to web api
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
+    /**
+ * Handle Http operation that failed.
+ * Let the app continue.
+ *
+ * @param operation - name of the operation that failed
+ * @param result - optional value to return as the observable result
+ */
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      // TODO: better job of transforming error for user consumption
+      this.log(`${operation} failed: ${error.message}`);
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+
+
   constructor(private http:  HttpClient, private messageService: MessageService) { }
 
   getMembers(): Observable<Member[]> {
@@ -27,11 +53,20 @@ export class MemberService {
     return of(member);
   }
 
+  /** PUT: update the hero on the server */
+  updateMember(member: Member): Observable<any> {
+    return this.http.put(this.membersUrl, member, this.httpOptions).pipe(
+      tap(_ => this.log(`updated member id=${member.id}`)),
+      catchError(this.handleError<any>('updateHero'))
+    );
+  }
+
     /** Log a HeroService message with the MessageService */
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
   }
 }
+
 
 
 /*
