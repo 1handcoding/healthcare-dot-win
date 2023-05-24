@@ -8,16 +8,9 @@ import { Member } from './member';
 export class InMemoryDataService implements InMemoryDataService {
   createDb() {
     const members = [
-      { id: 12, firstName: 'Dr. Nice' },
-      { id: 13, firstName: 'Bombasto' },
-      { id: 14, firstName: 'Celeritas' },
-      { id: 15, firstName: 'Magneta' },
-      { id: 16, firstName: 'RubberMan' },
-      { id: 17, firstName: 'Dynama' },
-      { id: 18, firstName: 'Dr. IQ' },
-      { id: 19, firstName: 'Magma' },
-      { id: 20, firstName: 'Tornado' }
-    ];
+    { id: 1, lastName: 'Ejemplo', firstName: 'Ronaldo', isSelected: false }, 
+    { id: 2, lastName: 'Ejemplo', firstName: 'Junior', isSelected: false }
+    ];;
     return {members};
   }
 

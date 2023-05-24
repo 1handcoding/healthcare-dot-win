@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Member } from 'src/app/member';
-import { MemberService } from 'src/app/members.service';
+import { MembersService } from 'src/app/members.service';
+import { defaultIfEmpty } from 'rxjs';
 
 
 @Component({
@@ -12,17 +13,21 @@ import { MemberService } from 'src/app/members.service';
 })
 
 export class MemberFormComponent implements OnInit {
-  member: Member | undefined;
+  selectedMember: Member | undefined;
 
   constructor(
     private route: ActivatedRoute,
-    private memberService: MemberService,
+    private membersService: MembersService,
     private location: Location) {}
 
   ngOnInit(): void {
     this.getMember();
   }
 
+  getSelectedMember(): void {
+    this.membersService.getSelectedMember()
+    }
+  
   getMember(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10)}
 
@@ -31,8 +36,8 @@ export class MemberFormComponent implements OnInit {
   }
 
   save(): void {
-    if (this.member) {
-      this.memberService.updateMember(this.member)
+    if (this.selectedMember) {
+      this.membersService.updateMember(this.selectedMember)
         .subscribe(() => this.goBack());
     }
   }

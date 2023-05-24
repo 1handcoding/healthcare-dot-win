@@ -6,14 +6,16 @@
     <div class="listBox">
         <ul class="lister">
             <li *ngFor="let member of members">
-                <p>{{member.firstName}}</p>
+                <button [class.selected]="member === selectedMember" type="button" class="selector" (click)="onSelect(member)">{{member.firstName}}</button>
+               <!-- <p>{{member.firstName}}</p>
                 <a routerLink="/detail/{{member.id}}">
                     <span class="badge">{{member.id}}</span> {{member.firstName}}
                 </a>
-                <!--<button type="button" class="delete" title="delete hero"
+                <button type="button" class="delete" title="delete hero"
     (click)="delete(hero)">x</button>-->
             </li>
         </ul>
+        <p *ngIf="selectedMember">{{selectedMember.firstName}}</p>
     </div>
 
 </div>

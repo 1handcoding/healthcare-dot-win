@@ -1,10 +1,10 @@
-<div *ngIf="member">
-
-  <h2>{{member.lastName | uppercase}} Details</h2>
-  <div><span>id: </span>{{member.id}}</div>
+<div *ngIf="selectedMember">
+  <router-outlet />
+  <h2>{{selectedMember.lastName | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedMember.id}}</div>
   <div>
-    <label for="member-lastName">Plan Member's Last Name: </label>
-    <input id="member-lastName" [(ngModel)]="member.lastName" placeholder="lastName">
+    <label for="selectedMember-lastName">Plan Member's Last Name: </label>
+    <input id="selectedMember-lastName" [(ngModel)]="selectedMember.lastName" placeholder="lastName">
   </div>
   <button type="button" (click)="save()">save</button>
 </div>

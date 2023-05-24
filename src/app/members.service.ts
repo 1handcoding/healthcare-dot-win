@@ -9,7 +9,7 @@ import { MessageService } from './message.service';
 import { MEMBERS } from './members-array';
 
 @Injectable({ providedIn: 'root' })
-export class MemberService {
+export class MembersService {
 
   private membersUrl = 'api/members';  // URL to web api
 
@@ -38,8 +38,19 @@ export class MemberService {
     };
   }
 
+  public selectedMember = null;
 
   constructor(private http:  HttpClient, private messageService: MessageService) { }
+
+  selectMember(member: Member): Observable<Member> {
+    let selectedMember = member;
+        this.messageService.add(`Selected Member firstName=${member.firstName}`);
+    return of(selectedMember);
+  }
+
+  getSelectedMember() {
+    return this.selectedMember;
+  }
 
   getMembers(): Observable<Member[]> {
     return this.http.get<Member[]>(this.membersUrl)
